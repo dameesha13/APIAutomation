@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="GW_Regression_V2 Suite">
+    <test name="BookDetailsByIDTest">
+        <classes>
+            <class name="BookServiceTest.BookDetailsByIDTest">
+                <methods>
+                    <include name="getBookDetailsById" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FoodServiceTest">
+        <classes>
+            <class name="FoodServiceTest.FoodServiceTest">
+            </class>
+        </classes>
+    </test>
+    <test name="DeletePlayerTest">
+        <classes>
+            <class name="PlayersTest.DeletePlayerTest">
+            </class>
+        </classes>
+    </test>
+    <test name="GetPlayersByIdTest">
+        <classes>
+            <class name="PlayersTest.GetPlayersByIdTest">
+                <methods>
+                    <include name="getAllPlayerDetailsById" />
+                    <include name="getAllPlayerDetailsInvalidPlayerId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PlayersServiceTest">
+        <classes>
+            <class name="PlayersTest.PlayersServiceTest">
+            </class>
+        </classes>
+    </test>
+</suite>

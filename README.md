@@ -2,11 +2,11 @@
 
 Technology Stack
 
-•	Java
-•	Rest Assured
-•	TestNG
-•	Maven
-•	Git
+• Java
+• Rest Assured
+• TestNG
+• Maven
+• Git
 
 Checkout the branch
       git clone https://github.com/dameesha13/APIAutomation.git

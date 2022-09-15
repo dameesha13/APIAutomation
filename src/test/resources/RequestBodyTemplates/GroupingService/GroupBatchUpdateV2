@@ -1,0 +1,17 @@
+[ 
+    { 
+        "contextId": "115d8cea-6fbe-4226-a62d-acc45adaef86",
+        "contextType": "ASSIGNMENT",
+        "courseId": "5ee1d8098601b2001a9fac5a",
+        "courseType": "REGISTRAR",
+        "groupingMode": "MANUAL",
+        "id": "61d6a8464f41b0173351043a",
+        "modifiedBy": "string",
+        "name": "Hello",
+        "teamMemberIds": [
+            "ffffffff5beaeb50fcdcc451c3a35ac5"
+             ],
+        "tenantId": "MSNG",
+        "userId": "ffffffff5beaeb50fcdcc451c3a35ac5"
+    }
+]

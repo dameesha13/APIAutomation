@@ -1,0 +1,14 @@
+{
+        "contextId": "",
+        "contextType": "",
+        "courseId": "",
+        "courseType": "",
+        "groupingMode": "MANUAL",
+        "modifiedBy": "string",
+        "name": "Hello",
+        "teamMemberIds": [
+            ""
+        ],
+        "tenantId": "MSNG", 
+        "userId": "ffffffff5beaeb50fcdcc451c3a35ac5" 
+}

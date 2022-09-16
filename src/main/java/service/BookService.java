@@ -21,7 +21,7 @@ public class BookService extends APIServicesBase {
 
         try {
             Response response = getRequest(baseURI, RelativeURLs.GET_BOOK_DETAILS_BY_ID.replace("{id}", bookId));
-            System.out.println(response.asString());
+
             if (response.statusCode() == 200)
                 getBookResponseDTO = objectMapper.readValue(response.asString(), GetBookResponseDTO.class);
             else

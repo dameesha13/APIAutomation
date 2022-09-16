@@ -24,7 +24,7 @@ public class FoodService extends APIServicesBase {
 
         try {
             Response response = postRequest(body,headers, baseURI, RelativeURLs.POST_NUTRIENTS,query);
-            System.out.println(response.asString());
+
             if (response.statusCode() == 201)
                 foodServiceResponseDTO = objectMapper.readValue(response.asString(), FoodServiceResponseDTO.class);
             else

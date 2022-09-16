@@ -23,7 +23,7 @@ public class PlayerService extends APIServicesBase {
 
         try {
             Response response = getRequest(baseURI, RelativeURLs.GET_ALL_PLAYERS);
-            System.out.println(response.asString());
+
             if (response.statusCode() == 200)
                 getAllPlayersResponseDTO = objectMapper.readValue(response.asString(), GetAllPlayersResponseDTO.class);
             else
@@ -42,7 +42,6 @@ public class PlayerService extends APIServicesBase {
 
         try {
             Response response = getRequest(baseURI, RelativeURLs.GET_DELETE_ALL_PLAYERS_BY_ID.replace("{id}", playerId));
-            System.out.println(response.asString());
             if (response.statusCode() == 200)
                 getAllPlayersByIdResponseDTO = objectMapper.readValue(response.asString(), GetAllPlayersByIdResponseDTO.class);
             else

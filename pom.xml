@@ -8,7 +8,6 @@
 
   <build>
     <plugins>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -20,7 +19,6 @@
           </execution>
         </executions>
       </plugin>
-
       <plugin>
         <groupId>org.codehaus.gmaven</groupId>
         <artifactId>gmaven-plugin</artifactId>
@@ -48,15 +46,12 @@
             <suiteXmlFile>src/test/resources/testng/${suiteXmlFile}</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
-
       </plugin>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>3.3</version>
         <dependencies>
-
         </dependencies>
       </plugin>
     </plugins>
@@ -82,14 +77,12 @@
   </build>
 
   <dependencies>
-
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.20</version>
       <scope>provided</scope>
     </dependency>
-
     <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
@@ -125,18 +118,16 @@
       <artifactId>slf4j-log4j12</artifactId>
       <version>1.7.5</version>
     </dependency>
-
   </dependencies>
 
   <profiles>
     <profile>
-      <!--<activation>
+      <activation>
            <activeByDefault>true</activeByDefault>
-       </activation>-->
+       </activation>
       <id>DEV</id>
       <properties>
         <bookService.baseurl>https://the-dune-api.herokuapp.com</bookService.baseurl>
-        <!--<pi.url.outcome>https://tst-piapi-internal.dev-openclass.com</pi.url.outcome>-->
         <playersService.baseurl>https://www.balldontlie.io</playersService.baseurl>
         <foodService.baseurl>https://api.edamam.com</foodService.baseurl>
         <template.body.path>./src/test/resources/RequestBodyTemplates</template.body.path>

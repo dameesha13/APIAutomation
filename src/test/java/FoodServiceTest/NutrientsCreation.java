@@ -5,17 +5,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import responsedto.FoodServiceResponseDTO;
-import service.FoodService;
 import util.bases.TestBase;
-import util.data.HeaderProvider;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class FoodServiceTest extends TestBase {
+public class NutrientsCreation extends TestBase {
 
     private FoodServiceResponseDTO foodServiceResponseDTO;
-    private FoodService foodService;
+    private service.FoodService foodService;
     protected JSONObject body;
     protected Map<String, Object> headers;
     private Map<String, Object> query;
@@ -23,7 +21,7 @@ public class FoodServiceTest extends TestBase {
 
     @BeforeClass
     public void serviceSetUp() throws Exception {
-        foodService = new FoodService();
+        foodService = new service.FoodService();
         envSetup();
     }
 
@@ -39,6 +37,9 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    /********************************* POST - nutrients creation Test Cases ***************************************/
+
+    //Verify nutrients creation
     @Test
     public void nutrientsCreation() throws Exception {
 
@@ -68,6 +69,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with empty AppId
     @Test
     public void nutrientsCreationWithEmptyAppId() throws Exception {
 
@@ -94,6 +96,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with null AppId
     @Test
     public void nutrientsCreationWithNullAppId() throws Exception {
 
@@ -120,6 +123,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with invalid AppId
     @Test
     public void nutrientsCreationWithInvalidAppId() throws Exception {
 
@@ -146,6 +150,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with empty AppKey
     @Test
     public void nutrientsCreationWithoutAppKey() throws Exception {
 
@@ -172,6 +177,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with invalid AppKey
     @Test
     public void nutrientsCreationInvalidAppKey() throws Exception {
 
@@ -198,6 +204,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with null AppKey
     @Test
     public void nutrientsCreationNullAppKey() throws Exception {
 

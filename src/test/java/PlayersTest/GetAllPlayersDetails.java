@@ -4,12 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import responsedto.GetAllPlayersResponseDTO;
-import service.BookService;
 import service.PlayerService;
-import util.bases.BaseResponseDTO;
 import util.bases.TestBase;
 
-public class PlayersServiceTest extends TestBase {
+public class GetAllPlayersDetails extends TestBase {
 
     private PlayerService playerService;
     private GetAllPlayersResponseDTO getAllPlayersResponseDTO;
@@ -37,6 +35,9 @@ public class PlayersServiceTest extends TestBase {
         }
     }
 
+    /********************************* GET - get all Player details Test Cases ***************************************/
+
+    //Verify all player details
     @Test
     public void getAllPlayerDetails() throws Exception {
         try {

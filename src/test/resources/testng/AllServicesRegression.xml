@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="All Services Regression Suite">
-    <test name="BookDetailsByIDTest">
+<suite name="AllServicesRegression Suite">
+    <test name="BookDetailsByID">
         <classes>
-            <class name="BookServiceTest.BookDetailsByIDTest">
+            <class name="BookServiceTest.BookDetailsByID">
                 <methods>
                     <include name="getBookDetailsById" />
                 </methods>
             </class>
         </classes>
     </test>
-    <test name="FoodServiceTest">
+    <test name="NutrientsCreation">
         <classes>
-            <class name="FoodServiceTest.FoodServiceTest">
+            <class name="FoodServiceTest.NutrientsCreation">
             </class>
         </classes>
     </test>
-    <test name="DeletePlayerTest">
+    <test name="DeletePlayerDetails">
         <classes>
-            <class name="PlayersTest.DeletePlayerTest">
+            <class name="PlayersTest.DeletePlayerDetails">
             </class>
         </classes>
     </test>
-    <test name="GetPlayersByIdTest">
+    <test name="GetPlayersDetailsById">
         <classes>
-            <class name="PlayersTest.GetPlayersByIdTest">
+            <class name="PlayersTest.GetPlayersDetailsById">
                 <methods>
                     <include name="getAllPlayerDetailsById" />
                     <include name="getAllPlayerDetailsInvalidPlayerId" />
@@ -32,9 +32,9 @@
             </class>
         </classes>
     </test>
-    <test name="PlayersServiceTest">
+    <test name="GetAllPlayersDetails">
         <classes>
-            <class name="PlayersTest.PlayersServiceTest">
+            <class name="PlayersTest.GetAllPlayersDetails">
             </class>
         </classes>
     </test>

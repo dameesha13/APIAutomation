@@ -4,11 +4,10 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import responsedto.GetAllPlayersByIdResponseDTO;
 import service.PlayerService;
 import util.bases.TestBase;
 
-public class DeletePlayerTest extends TestBase {
+public class DeletePlayerDetails extends TestBase {
 
     private PlayerService playerService;
 
@@ -35,16 +34,19 @@ public class DeletePlayerTest extends TestBase {
         }
     }
 
+    /********************************* DELETE - delete Player details Test Cases ***************************************/
+
+    //Verify delete specific userId
     @Test
-    public void getAllPlayerDetailsById() throws Exception {
+    public void deletePlayerDetailsById() throws Exception {
         try {
-            logger.info("## Start | getAllPlayerDetailsById ##" + this.getClass().getName());
+            logger.info("## Start | deletePlayerDetailsById ##" + this.getClass().getName());
 
             Response response = playerService.deletePlayer("237");
             Assert.assertEquals(response.getStatusCode(), 404); //Assert the status code
 
         } catch (Exception e) {
-            logger.info("getAllPlayerDetailsById : FAIL");
+            logger.info("deletePlayerDetailsById : FAIL");
             throw e;
         }
     }

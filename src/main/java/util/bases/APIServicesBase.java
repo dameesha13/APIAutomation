@@ -98,4 +98,28 @@ public abstract class APIServicesBase extends RestUtil {
             throw ex;
         }
     }
+
+    public Response putRequest(JSONObject body, Map<String, Object> headers, String baseURI, String relativeURI) throws Exception {
+
+        try {
+            setBaseURI(baseURI);
+            setBasePath(relativeURI);
+
+            Response response =
+                    given()
+                            .headers(headers)
+                            .body(body.toJSONString())
+                            .when()
+                            .put();
+
+            // Clear Base Path
+            resetBaseURI();
+            resetBasePath();
+
+            return response;
+
+        } catch (Exception ex) {
+            throw ex;
+        }
+    }
 }

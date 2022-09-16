@@ -5,25 +5,24 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import responsedto.FoodServiceResponseDTO;
-import service.FoodService;
 import util.bases.TestBase;
-import util.data.HeaderProvider;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class FoodServiceTest extends TestBase {
+public class NutrientsCreation extends TestBase {
 
     private FoodServiceResponseDTO foodServiceResponseDTO;
-    private FoodService foodService;
+    private service.FoodService foodService;
     protected JSONObject body;
     protected Map<String, Object> headers;
     private Map<String, Object> query;
+    private JSONObject testData;
 
 
     @BeforeClass
     public void serviceSetUp() throws Exception {
-        foodService = new FoodService();
+        foodService = new service.FoodService();
         envSetup();
     }
 
@@ -33,12 +32,15 @@ public class FoodServiceTest extends TestBase {
     private void envSetup() throws Exception {
 
         try {
-
+            testData = getJSONTestData("TestDataFile", "nutrientsTestData"); //load the test data file
         } catch (Exception ex) {
             throw ex;
         }
     }
 
+    /********************************* POST - nutrients creation Test Cases ***************************************/
+
+    //Verify nutrients creation
     @Test
     public void nutrientsCreation() throws Exception {
 
@@ -54,8 +56,8 @@ public class FoodServiceTest extends TestBase {
             body.put("quantity", 0);
 
             query = new HashMap<>();
-            query.put("app_id", "d2dc3e20");
-            query.put("app_key", "d5106d8077c4a6f17c8f44034fbae5e3");
+            query.put("app_id", testData.get("app_id"));
+            query.put("app_key", testData.get("app_key"));
 
             foodServiceResponseDTO = foodService.nutrientsCreation(body,map, query);
             Assert.assertEquals(foodServiceResponseDTO.getStatusCode(), 200); //Assert the Status code
@@ -68,6 +70,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with empty AppId
     @Test
     public void nutrientsCreationWithEmptyAppId() throws Exception {
 
@@ -82,7 +85,7 @@ public class FoodServiceTest extends TestBase {
 
             query = new HashMap<>();
             query.put("app_id", "");
-            query.put("app_key", "d5106d8077c4a6f17c8f44034fbae5e3");
+            query.put("app_key", testData.get("app_key"));
 
             foodServiceResponseDTO = foodService.nutrientsCreation(body,map, query);
             Assert.assertEquals(foodServiceResponseDTO.getStatusCode(), 401); //Assert the Status code
@@ -94,6 +97,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with null AppId
     @Test
     public void nutrientsCreationWithNullAppId() throws Exception {
 
@@ -108,7 +112,7 @@ public class FoodServiceTest extends TestBase {
 
             query = new HashMap<>();
             query.put("app_id", null);
-            query.put("app_key", "d5106d8077c4a6f17c8f44034fbae5e3");
+            query.put("app_key", testData.get("app_key"));
 
             foodServiceResponseDTO = foodService.nutrientsCreation(body,map, query);
             Assert.assertEquals(foodServiceResponseDTO.getStatusCode(), 401); //Assert the Status code
@@ -120,6 +124,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with invalid AppId
     @Test
     public void nutrientsCreationWithInvalidAppId() throws Exception {
 
@@ -134,7 +139,7 @@ public class FoodServiceTest extends TestBase {
 
             query = new HashMap<>();
             query.put("app_id", "12");
-            query.put("app_key", "d5106d8077c4a6f17c8f44034fbae5e3");
+            query.put("app_key", testData.get("app_key"));
 
             foodServiceResponseDTO = foodService.nutrientsCreation(body,map, query);
             Assert.assertEquals(foodServiceResponseDTO.getStatusCode(), 401); //Assert the Status code
@@ -146,6 +151,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with empty AppKey
     @Test
     public void nutrientsCreationWithoutAppKey() throws Exception {
 
@@ -159,7 +165,7 @@ public class FoodServiceTest extends TestBase {
             body.put("quantity", 0);
 
             query = new HashMap<>();
-            query.put("app_id", "d2dc3e20");
+            query.put("app_id", testData.get("app_id"));
             query.put("app_key", "");
 
             foodServiceResponseDTO = foodService.nutrientsCreation(body,map, query);
@@ -172,6 +178,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with invalid AppKey
     @Test
     public void nutrientsCreationInvalidAppKey() throws Exception {
 
@@ -185,7 +192,7 @@ public class FoodServiceTest extends TestBase {
             body.put("quantity", 0);
 
             query = new HashMap<>();
-            query.put("app_id", "d2dc3e20");
+            query.put("app_id", testData.get("app_id"));
             query.put("app_key", "123");
 
             foodServiceResponseDTO = foodService.nutrientsCreation(body,map, query);
@@ -198,6 +205,7 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    //Verify nutrients creation with null AppKey
     @Test
     public void nutrientsCreationNullAppKey() throws Exception {
 
@@ -211,7 +219,7 @@ public class FoodServiceTest extends TestBase {
             body.put("quantity", 0);
 
             query = new HashMap<>();
-            query.put("app_id", "d2dc3e20");
+            query.put("app_id", testData.get("app_id"));
             query.put("app_key", null);
 
             foodServiceResponseDTO = foodService.nutrientsCreation(body,map, query);
@@ -224,5 +232,35 @@ public class FoodServiceTest extends TestBase {
         }
     }
 
+    /********************************* PUT - nutrients updation Test Cases ***************************************/
 
+    //Verify nutrients creation
+    @Test
+    public void updateNutrients() throws Exception {
+
+        try {
+            /*logger.info("## Start | updateNutrients ##" + this.getClass().getName());
+
+            //headers = HeaderProvider.getHeaders("Header1");
+            //headers.put("Content-Type", "application/json");
+            Map headers=new HashMap();
+            headers.put("Content-Type", "application/json");
+
+            body = getFoodJSONBodyTemplate("FoodNutrientsV2");
+            body.put("quantity", 1);
+
+            query = new HashMap<>();
+            query.put("app_id", testData.get("app_id"));
+            query.put("app_key", testData.get("app_key"));
+
+            foodServiceResponseDTO = foodService.updateNutrients(body,headers, query);
+            Assert.assertEquals(foodServiceResponseDTO.getStatusCode(), 200); //Assert the Status code
+            Assert.assertNotNull(foodServiceResponseDTO.getTotalWeight()); //totalWeight
+            Assert.assertTrue(foodServiceResponseDTO.getResponse().asString().contains("http://www.edamam.com/ontologies"));//Assert the uri*/
+
+        } catch (Exception ex) {
+            logger.info("updateNutrients : FAIL");
+            throw ex;
+        }
+    }
 }

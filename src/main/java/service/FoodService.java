@@ -24,7 +24,7 @@ public class FoodService extends APIServicesBase {
 
         try {
             Response response = postRequest(body,headers, baseURI, RelativeURLs.POST_NUTRIENTS,query);
-            System.out.println(response.asString());
+
             if (response.statusCode() == 201)
                 foodServiceResponseDTO = objectMapper.readValue(response.asString(), FoodServiceResponseDTO.class);
             else
@@ -37,4 +37,25 @@ public class FoodService extends APIServicesBase {
         }
         return foodServiceResponseDTO;
     }
+
+    //Service for update Nutrients
+    public FoodServiceResponseDTO updateNutrients(JSONObject body, Map<String, Object> headers,Map<String, Object> query) throws Exception {
+
+        try {
+            Response response = putRequest(body, headers, baseURI, RelativeURLs.PUT_NUTRIENTS);
+
+            if (response.statusCode() == 200)
+                foodServiceResponseDTO = objectMapper.readValue(response.asString(), FoodServiceResponseDTO.class);
+            else
+                foodServiceResponseDTO = new FoodServiceResponseDTO();
+
+            foodServiceResponseDTO.setResponse(response);
+
+        } catch (Exception ex) {
+            throw ex;
+        }
+
+        return foodServiceResponseDTO;
+    }
+
 }

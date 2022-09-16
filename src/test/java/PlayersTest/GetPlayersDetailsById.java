@@ -4,11 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import responsedto.GetAllPlayersByIdResponseDTO;
-import responsedto.GetAllPlayersResponseDTO;
 import service.PlayerService;
 import util.bases.TestBase;
 
-public class GetPlayersByIdTest extends TestBase {
+public class GetPlayersDetailsById extends TestBase {
 
     private PlayerService playerService;
     private GetAllPlayersByIdResponseDTO getAllPlayersByIdResponseDTO;
@@ -36,6 +35,9 @@ public class GetPlayersByIdTest extends TestBase {
         }
     }
 
+    /********************************* GET - get Player details Test Cases ***************************************/
+
+    //Verify player details to specific playerId
     @Test
     public void getAllPlayerDetailsById() throws Exception {
         try {
@@ -52,6 +54,7 @@ public class GetPlayersByIdTest extends TestBase {
         }
     }
 
+    //Verify player details without playerId
     @Test
     public void getAllPlayerDetailsWithoutId() throws Exception {
         try {
@@ -66,6 +69,7 @@ public class GetPlayersByIdTest extends TestBase {
         }
     }
 
+    //Verify player details with invalid playerId
     @Test
     public void getAllPlayerDetailsInvalidPlayerId() throws Exception {
         try {
@@ -79,5 +83,4 @@ public class GetPlayersByIdTest extends TestBase {
             throw e;
         }
     }
-
 }

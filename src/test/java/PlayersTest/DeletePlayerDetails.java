@@ -44,7 +44,6 @@ public class DeletePlayerDetails extends TestBase {
 
             Response response = playerService.deletePlayer("237");
             Assert.assertEquals(response.getStatusCode(), 404); //Assert the status code
-
         } catch (Exception e) {
             logger.info("deletePlayerDetailsById : FAIL");
             throw e;

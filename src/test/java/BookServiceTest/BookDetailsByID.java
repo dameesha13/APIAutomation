@@ -54,21 +54,4 @@ public class BookDetailsByID extends TestBase {
             throw e;
         }
     }
-
-   /* //Return 200 for negative scenarios from the API
-    @Test
-    public void getBookDetailsByInvalidId() throws Exception {
-        try {
-            logger.info("## Start | getBookDetailsByInvalidId ##" + this.getClass().getName());
-
-            getBookResponseDTO = bookService.getBookDetailsById(null);
-            Assert.assertEquals(getBookResponseDTO.getStatusCode(), 200); //Assert the status code
-            //Assert.assertEquals(getBookResponseDTO.getResponse(),);
-
-        } catch (Exception e) {
-            logger.info("getBookDetailsByInvalidId : FAIL");
-            throw e;
-        }
-    }*/
-
 }

@@ -53,5 +53,4 @@ public class GetAllPlayersDetails extends TestBase {
             throw e;
         }
     }
-
 }

@@ -83,5 +83,4 @@ public class GetPlayersDetailsById extends TestBase {
             throw e;
         }
     }
-
 }

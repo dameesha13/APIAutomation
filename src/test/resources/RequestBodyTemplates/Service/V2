@@ -1,9 +1,2 @@
 {
-  "ingredients": [
-    {
-      "quantity": 0,
-      "measureURI": "string",
-      "foodId": "string"
-    }
-  ]
 }

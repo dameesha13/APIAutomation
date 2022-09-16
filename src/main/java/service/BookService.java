@@ -9,7 +9,6 @@ import util.data.Config;
 public class BookService extends APIServicesBase {
 
     private final String baseURI;
-    //private final String bookURL;
     private GetBookResponseDTO getBookResponseDTO;
 
     public BookService() {

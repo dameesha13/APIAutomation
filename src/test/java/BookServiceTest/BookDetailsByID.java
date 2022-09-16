@@ -54,4 +54,23 @@ public class BookDetailsByID extends TestBase {
             throw e;
         }
     }
+
+    //Verify get book details by different Id
+    @Test
+    public void getBookDetailsByDifferentId() throws Exception {
+        try {
+            logger.info("## Start | getBookDetailsByDifferentId ##" + this.getClass().getName());
+
+            getBookResponseDTO = bookService.getBookDetailsById("22");
+            Assert.assertEquals(getBookResponseDTO.getStatusCode(), 200); //Assert the status code
+            Assert.assertEquals(getBookResponseDTO.getId(), "22"); //Assert the ID
+            Assert.assertEquals(getBookResponseDTO.getAuthor().get(0),"Brian Herbert");//Assert the title
+            Assert.assertEquals(getBookResponseDTO.getTitle(),"Dune: The Heir of Caladan");//Assert the title
+            Assert.assertEquals(getBookResponseDTO.getYear(), "TBA");//Assert the year
+
+        } catch (Exception e) {
+            logger.info("getBookDetailsByDifferentId : FAIL");
+            throw e;
+        }
+    }
 }

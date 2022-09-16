@@ -133,6 +133,7 @@
         <template.body.path>./src/test/resources/RequestBodyTemplates</template.body.path>
         <template.body.path.food>./src/test/resources/RequestBodyTemplates/FoodService</template.body.path.food>
         <template.header.path>./src/test/resources/RequestHeaderTemplates/RequestHeaderTemplates</template.header.path>
+        <template.data.path>./src/test/resources/data/dev</template.data.path>
         <File.path>./src/resources/</File.path>
       </properties>
     </profile>

@@ -1,4 +1,4 @@
 package requestdto;
 
-public class RequestDTO {
+public interface RequestDTO {
 }

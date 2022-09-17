@@ -13,6 +13,6 @@ public class GetBookResponseDTO extends BaseResponseDTO {
     private String id;
     private String title;
     private String year;
-    private List author;
+    private List<String> author;
     private String wiki_url;
 }

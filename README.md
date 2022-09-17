@@ -10,8 +10,9 @@ This project contains automated test cases for a publicly available REST API.
 * TestNG
 * Maven
 * Git
-* lombok
-* jackson
+* Lombok
+* Jackson
+* SonarQube
 
 ###### Checkout the branch
       git clone (https://github.com/dameesha13/APIAutomation.git)
